@@ -1,0 +1,17 @@
+---
+dependencies: []
+
+galaxy_info:
+  author: haikulab
+  description: MySQL server for Ubuntu.
+  company: "Haiku Lab Limited"
+  license: "license (BSD, MIT)"
+  min_ansible_version: 1.9
+  platforms:
+    - name: Ubuntu
+      versions:
+      - all
+  galaxy_tags:
+    - database
+    - mysql
+    - percona

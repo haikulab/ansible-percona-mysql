@@ -1,0 +1,17 @@
+---
+# Variable configuration.
+- include: variables.yml
+
+# Setup/install tasks.
+- include: init.yml
+
+- name: Check if MySQL packages were installed.
+  set_fact:
+    mysql_install_packages: "{{ (deb_mysql_install_packages is defined and deb_mysql_install_packages.changed) }}"
+
+# Configure MySQL.
+- include: configure.yml
+#- include: secure-installation.yml
+- include: databases.yml
+- include: users.yml
+- include: replication.yml
