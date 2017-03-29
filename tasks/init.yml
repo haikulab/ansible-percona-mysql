@@ -11,8 +11,9 @@
   apt: name={{ item }} state=present
   with_items: "{{ python_mysqldb_modules }}"
 
-- name: Add Percona repo key to system
-  apt_key: keyserver=keys.gnupg.net id="{{ percona_repo_key }}"
+- name: Install custom .deb file
+  apt:
+    deb: https://repo.percona.com/apt/percona-release_0.1-4.{{ ansible_distribution_release }}_all.deb
   register: percona_key_installed
 
 - name: Add package definition
